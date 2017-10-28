@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 
-<mapper namespace="com.book.demo.dao.BookMapper">
+<mapper namespace="com.book.demo.dao.BookMapper" >
     <select id="findBookByName" resultType="com.book.demo.domain.Book">
         SELECT * FROM book
         <where>
@@ -9,10 +9,5 @@
                 name like concat('%',#{name},'%')
             </if>
         </where>
-        LIMIT #{page},#{size}
     </select>
-
-    <insert id="saveBook" parameterType="java.util.HashMap">
-        INSERT INTO book(name,money) VALUES (#{name},#{money})
-    </insert>
 </mapper>

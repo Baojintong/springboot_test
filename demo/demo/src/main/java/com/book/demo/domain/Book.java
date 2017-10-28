@@ -8,6 +8,7 @@ public class Book {
     private Integer num;
     private String name;
     private BigDecimal money;
+    private String src;
 
     public Integer getNum() {
         return num;
@@ -31,5 +32,22 @@ public class Book {
 
     public void setMoney(BigDecimal money) {
         this.money = money;
+    }
+
+    public String getSrc() {
+        return src;
+    }
+
+    public void setSrc(String src) {
+        this.src = src;
+    }
+
+    @Override
+    public String toString() {
+        return "Book{" +
+                "num=" + num +
+                ", name='" + name + '\'' +
+                ", money=" + money +
+                '}';
     }
 }
