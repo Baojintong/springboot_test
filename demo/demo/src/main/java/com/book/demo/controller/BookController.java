@@ -28,6 +28,7 @@ public class BookController {
         }else{
             m.put("name", name);
         }
+        System.out.println(name+"----"+page+"----"+size);
         m.put("page", (Integer.parseInt(page))*Integer.parseInt(size));
         m.put("size", Integer.parseInt(size));
         List i = bookMapper.findBookByName(m);
