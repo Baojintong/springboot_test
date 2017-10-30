@@ -26,6 +26,7 @@ public class UserController {
         HashMap map=new HashMap();
         map.put("username",username);
         map.put("password",password);
+        System.out.println(username+"------"+password);
         return null;
     }
 
