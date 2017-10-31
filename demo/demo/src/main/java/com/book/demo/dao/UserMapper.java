@@ -10,4 +10,6 @@ public interface UserMapper {
     List<Book> findBookByName(Map m);
 
     Integer saveBook(Map m);
+
+    Integer login(Map m);
 }

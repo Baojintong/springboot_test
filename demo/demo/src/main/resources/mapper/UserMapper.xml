@@ -2,7 +2,7 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 
 <mapper namespace="com.book.demo.dao.UserMapper">
-    <select id="findBookByName" resultType="com.book.demo.domain.Book">
+    <select id="findBookByName" resultType="com.book.demo.domain.Book"  parameterType="java.util.HashMap">
         SELECT * FROM book
         <where>
             <if test="name!=null and name!=''">
@@ -15,4 +15,8 @@
     <insert id="saveBook" parameterType="java.util.HashMap">
         INSERT INTO book(name,money) VALUES (#{name},#{money})
     </insert>
+
+    <select id="login" resultType="java.lang.Integer"  parameterType="java.util.HashMap">
+      SELECT COUNT(*) FROM user WHERE username=#{username} AND `password`=#{password}
+    </select>
 </mapper>

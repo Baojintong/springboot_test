@@ -38,8 +38,8 @@ public class ParamInterceptor implements HandlerInterceptor {
                 }
             }
         }
-        PrintWriter out = response.getWriter();
         if (!result) {
+            PrintWriter out = response.getWriter();
             out.print("Missing parameters");
         }
         //System.out.println(cs);
