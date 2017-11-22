@@ -10,6 +10,13 @@ public class Book {
     private BigDecimal money;
     private String src;
 
+    public Book(Integer num, String name, BigDecimal money, String src) {
+        this.num = num;
+        this.name = name;
+        this.money = money;
+        this.src = src;
+    }
+
     public Integer getNum() {
         return num;
     }
