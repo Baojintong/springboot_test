@@ -1,6 +1,7 @@
 package com.book.demo.controller;
 
 import com.book.demo.domain.Controller;
+import com.book.demo.domain.HelloService;
 import com.book.demo.domain.TestCondition;
 import com.book.demo.util.RedisUtils;
 import org.hibernate.engine.jdbc.ReaderInputStream;
@@ -23,9 +24,8 @@ public class UserController {
 
     @Autowired
     UserMapper dao;
-//
-//    @Autowired
-//    RedisUtils ru;
+    @Autowired
+    private HelloService helloService;
 
     @RequestMapping(value = "/Login", method = RequestMethod.GET)
     public String query(String username,String password) {
@@ -45,6 +45,11 @@ public class UserController {
         ApplicationContext ac=new AnnotationConfigApplicationContext("com.book.demo.domain");//当然通过Spring实战里面学到的方式也是可以得
         System.out.println(ac.getBean("sss"));//Book{num=1, name='java核心技术', money=20}
         return 10;
+    }
+
+    @RequestMapping("/auto/home")
+    public String home(){
+        return helloService.say();
     }
 
 }
