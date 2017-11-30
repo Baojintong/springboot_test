@@ -19,4 +19,8 @@
     <select id="login" resultType="java.lang.Integer"  parameterType="java.util.HashMap">
       SELECT COUNT(*) FROM user WHERE username=#{username} AND `password`=#{password}
     </select>
+
+    <select id="query" resultType="com.book.demo.domain.Book">
+        SELECT * FROM book
+    </select>
 </mapper>
