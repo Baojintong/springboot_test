@@ -2,6 +2,10 @@ package com.book.demo.domain;
 
 
 import org.springframework.boot.context.properties.ConfigurationProperties;
+import org.springframework.boot.jdbc.DataSourceBuilder;
+import org.springframework.context.annotation.Bean;
+
+import javax.sql.DataSource;
 
 @ConfigurationProperties(prefix = "hello")
 //@Component //如果这里添加了注解那么在自动配置类的时候就不用添加@enableConfigurationProperties(HelloProperties.class)注解.
@@ -16,4 +20,5 @@ public class HelloProperties {
     public void setMsg(String msg) {
         this.msg = msg;
     }
+
 }

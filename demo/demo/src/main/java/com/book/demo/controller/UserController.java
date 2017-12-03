@@ -15,6 +15,7 @@ import com.book.demo.dao.UserMapper;
 
 import java.io.*;
 import java.util.HashMap;
+import java.util.List;
 
 @RestController
 @RequestMapping(value = "/User")
@@ -50,6 +51,11 @@ public class UserController {
     @RequestMapping("/auto/home")
     public String home(){
         return helloService.say();
+    }
+
+    @RequestMapping("/query")
+    public List query(){
+        return dao.query();
     }
 
 }

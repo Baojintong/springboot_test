@@ -12,4 +12,6 @@ public interface UserMapper {
     Integer saveBook(Map m);
 
     Integer login(Map m);
+
+    List<Book> query();
 }
