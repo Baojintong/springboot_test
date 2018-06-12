@@ -33,6 +33,8 @@ dependencies {
 	compile('org.springframework.boot:spring-boot-starter-data-redis')
 	compile('org.mybatis.spring.boot:mybatis-spring-boot-starter:1.3.1')
 	compile('org.springframework.boot:spring-boot-starter-web')
+	compile ('org.apache.commons:commons-lang3:3.7')
+	compile('org.springframework.boot:spring-boot-starter-actuator')
 //	compile('com.alibaba:druid:1.1.5')
 //	compile("org.springframework.boot:spring-boot-starter-security")
 	runtime('mysql:mysql-connector-java')

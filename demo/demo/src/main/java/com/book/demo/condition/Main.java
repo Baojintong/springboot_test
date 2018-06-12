@@ -1,7 +1,12 @@
 package com.book.demo.condition;
 
+
+
+import org.apache.commons.lang3.time.StopWatch;
+
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Vector;
 import java.util.concurrent.*;
 import java.util.concurrent.atomic.AtomicInteger;
 import java.util.concurrent.locks.Lock;
@@ -27,22 +32,22 @@ public class Main {
 //        }
 //        latch.await();
 //        System.out.println(u.getAi());
-
-        BlockingQueue<Runnable> queue = new LinkedBlockingQueue<Runnable>(3);
-
-        ThreadPoolExecutor executor = new ThreadPoolExecutor
-                (10,
-                        10, 30,
-                        TimeUnit.SECONDS, queue,new HandlerThreadFactory());//通过工厂设置了异常处理器
-
-        Thread.setDefaultUncaughtExceptionHandler(new defaultUncaughtExceptionHandler());
-        executor.execute(new Run1());//发生了异常  java.lang.RuntimeException
-
-        ThreadPoolExecutor executor2 = new ThreadPoolExecutor
-                (10,
-                        10, 30,
-                        TimeUnit.SECONDS, queue);//未设置异常处理器
-        executor2.execute(new Run1());//默认的异常处理器--发生了异常  java.lang.RuntimeException
+//
+//        BlockingQueue<Runnable> queue = new LinkedBlockingQueue<Runnable>(3);
+//
+//        ThreadPoolExecutor executor = new ThreadPoolExecutor
+//                (10,
+//                        10, 30,
+//                        TimeUnit.SECONDS, queue,new HandlerThreadFactory());//通过工厂设置了异常处理器
+//
+//        Thread.setDefaultUncaughtExceptionHandler(new defaultUncaughtExceptionHandler());
+//        executor.execute(new Run1());//发生了异常  java.lang.RuntimeException
+//
+//        ThreadPoolExecutor executor2 = new ThreadPoolExecutor
+//                (10,
+//                        10, 30,
+//                        TimeUnit.SECONDS, queue);//未设置异常处理器
+//        executor2.execute(new Run1());//默认的异常处理器--发生了异常  java.lang.RuntimeException
 
 
     }
